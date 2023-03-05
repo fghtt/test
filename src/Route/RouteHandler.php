@@ -12,9 +12,9 @@ class RouteHandler
     private $route;
 
     /**
-     * @param string $route
-     *
      * Create a new RouteHandlerInstance
+     *
+     * @param string $route
      */
     public function __construct(string $route)
     {

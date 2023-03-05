@@ -1,6 +1,6 @@
 <?php
 
-namespace View;
+namespace App\View;
 
 class View
 {
@@ -16,7 +16,7 @@ class View
         ($vars) ? extract($vars) : '';
 
         ob_start();
-        include $this->templatesPath . "/$templateName.php";
+        include $this->templatesPath . "$templateName.php";
         $buffer = ob_get_contents();
         ob_end_clean();
 
