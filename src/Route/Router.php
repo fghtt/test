@@ -44,6 +44,9 @@ class Router
     public function direct()
     {
         $routeConfiguration = $this->routeHandler->pluck($this->routes);
+        $controller = $routeConfiguration->getController();
+        $action = $routeConfiguration->getAction();
+        echo $controller->$action();
     }
 
     /**

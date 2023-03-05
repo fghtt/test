@@ -3,7 +3,7 @@
 use App\Route\Router;
 
 $routes = [
-    '/\/upload\/(.+)\/(.+)/' => ['asdsa', 'asds']
+    '/\/upload/' => [\Controllers\UploadController::class, 'index']
 ];
 
 $router = new Router();

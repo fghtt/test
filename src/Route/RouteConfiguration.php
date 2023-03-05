@@ -2,6 +2,8 @@
 
 namespace App\Route;
 
+use Controllers\Controller;
+
 class RouteConfiguration
 {
     /**
@@ -47,7 +49,7 @@ class RouteConfiguration
      */
     public function getController()
     {
-        return $this->controller;
+        return new $this->controller();
     }
 
     /**
