@@ -117,21 +117,23 @@ abstract class ActiveRecord
         return $data;
     }
 
+    /**
+     * Creating a new instance
+     *
+     * @param array $data
+     * @return void
+     */
     public function create(array $data)
     {
         $this->setProperties($data);
-        $sql = "INSERT INTO $this->tableName (";
+        $sql = "INSERT INTO `$this->tableName` (";
         $sql .= implode(', ', array_keys($data));
         $sql .= ') VALUES (:';
-        $sql .= implode('\', \':', array_keys($data));
+        $sql .= implode(', :', array_keys($data));
         $sql .= ');';
-        var_dump($sql);
-        $data = $this->formatData($this->getProperties());
+        $data = $this->formatData($data);
         unset($data[':id']);
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
-        //var_dump($this->formatData($this->getProperties()));
-       $this->db->query($sql, $data);
+
+        $this->db->query($sql, $data);
     }
 }

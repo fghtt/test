@@ -34,10 +34,11 @@ class RouteHandler
                 $matches = $this->parse($route);
                 $routeConfiguration = new RouteConfiguration($controllerAndAction[0],
                     $controllerAndAction[1], $matches);
+                break;
             }
-
-            return $routeConfiguration;
         }
+
+        return $routeConfiguration;
     }
 
     /**
