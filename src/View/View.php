@@ -25,10 +25,10 @@ class View
      * Includes template
      *
      * @param string $templateName
-     * @param arr|null $vars
+     * @param array|null $vars
      * @return void
      */
-    public function __invoke(string $templateName, arr $vars = null)
+    public function load(string $templateName, array $vars = null)
     {
         ($vars) ? extract($vars) : '';
 

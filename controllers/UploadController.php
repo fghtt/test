@@ -15,6 +15,7 @@ class UploadController extends Controller
 
     public function __construct()
     {
+        parent::__construct();
         $this->service = new CSVFilesService();
     }
 
@@ -23,7 +24,7 @@ class UploadController extends Controller
      */
     public function index()
     {
-        return $this->view('upload/index');
+        return $this->view->load('upload/index');
     }
 
     /**

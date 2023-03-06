@@ -14,11 +14,7 @@ class CSVFilesService
         while($data = fgetcsv($file, 2000, ';', ',')) {
             $csvFile = new CSVFile();
             $csvFile->create($this->parseData($data));
-
-            break;
         }
-
-
     }
 
     public function parseData($data)
