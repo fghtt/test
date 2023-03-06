@@ -57,7 +57,7 @@ class RouteConfiguration
      *
      * @return string
      */
-    public function getAction(): string
+    public function getAction()
     {
         return $this->action;
     }
@@ -67,7 +67,7 @@ class RouteConfiguration
      *
      * @return array
      */
-    public function getParams(): array
+    public function getParams()
     {
         return $this->params;
     }

@@ -26,7 +26,7 @@ class Router
     private $routeHandler;
 
     /**
-     * Creating a new Route instanc
+     * Creating a new Route instance
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class Router
      * @param array $routes
      * @return void
      */
-    public function setRoutes(array $routes): void
+    public function setRoutes(array $routes)
     {
         $this->routes = $routes;
     }

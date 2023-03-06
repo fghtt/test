@@ -34,19 +34,19 @@ class RouteHandler
                 $matches = $this->parse($route);
                 $routeConfiguration = new RouteConfiguration($controllerAndAction[0],
                     $controllerAndAction[1], $matches);
-
-                return $routeConfiguration;
             }
+
+            return $routeConfiguration;
         }
     }
 
     /**
      * Checks for matches
      *
-     * @param $route
+     * @param string $route
      * @return false|int
      */
-    public function is_match($route): false|int
+    public function is_match(string $route)
     {
         return preg_match_all($route, $this->route);
     }
@@ -57,7 +57,7 @@ class RouteHandler
      * @param $route
      * @return array|null
      */
-    public function parse($route): ?array
+    public function parse($route)
     {
         preg_match_all($route, $this->route, $matches, PREG_SET_ORDER);
         unset($matches[0][0]);
