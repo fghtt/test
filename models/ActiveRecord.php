@@ -136,4 +136,14 @@ abstract class ActiveRecord
 
         $this->db->query($sql, $data);
     }
+
+    /**
+     * Select all data from table
+     *
+     * @return array|null
+     */
+    public function all()
+    {
+        return $this->db->query("SELECT * FROM $this->tableName");
+    }
 }

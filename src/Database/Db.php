@@ -35,12 +35,12 @@ class Db
         $password = trim(explode('=', $file[5])[1]);
 
         $this->pdo = new \PDO(
-            "mysql:host=$host;port=$port;dbname=$database",
+            "mysql:host=$host;port=$port;dbname=$database;charset=utf8",
             $user,
             $password
         );
 
-        $this->pdo->exec('SET NAMES UTF8');
+        $this->pdo->exec('SET NAMES utf8');
     }
 
     /**

@@ -6,17 +6,30 @@ use Models\CSVFile;
 
 class CSVFilesService
 {
+    /**
+     * Create a new instance
+     *
+     * @param array $file
+     * @return void
+     */
     public function store(array $file)
     {
         $file = fopen($file['tmp_name'], 'r');
         fgetcsv($file, 2000, ';', ',');
-
+        $csvFile = new CSVFile();
+        $csvFile->beforeCreate();
         while($data = fgetcsv($file, 2000, ';', ',')) {
             $csvFile = new CSVFile();
-            $csvFile->create($this->parseData($data));
+            $data[1] ? $csvFile->create($this->parseData($data)) : '';
         }
     }
 
+    /**
+     * Binds data with column name
+     *
+     * @param $data
+     * @return array
+     */
     public function parseData($data)
     {
         $columns = [];

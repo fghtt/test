@@ -36,5 +36,6 @@ class UploadController extends Controller
     {
         $file = $_FILES['file'];
         $this->service->store($file);
+        return header("Location: /file");
     }
 }
