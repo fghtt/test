@@ -4,6 +4,11 @@ namespace Models;
 
 class CSVFile extends ActiveRecord
 {
+    /**
+     * The table name
+     *
+     * @var string
+     */
     protected $tableName = 'data';
 
     /**

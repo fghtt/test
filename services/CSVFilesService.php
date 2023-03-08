@@ -16,11 +16,11 @@ class CSVFilesService
     {
         $file = fopen($file['tmp_name'], 'r');
         fgetcsv($file, 2000, ';', ',');
-        $csvFile = new CSVFile();
-        $csvFile->beforeCreate();
-        while($data = fgetcsv($file, 2000, ';', ',')) {
+        CSVFile::model()->beforeCreate();
+
+        while ($data = fgetcsv($file, 2000, ';', ',')) {
             $csvFile = new CSVFile();
-            $data[1] ? $csvFile->create($this->parseData($data)) : '';
+            isset($data[1]) ? $csvFile->create($this->parseData($data)) : '';
         }
     }
 

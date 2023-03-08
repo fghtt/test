@@ -146,4 +146,14 @@ abstract class ActiveRecord
     {
         return $this->db->query("SELECT * FROM $this->tableName");
     }
+
+    /**
+     * Get a new self instance
+     *
+     * @return static
+     */
+    public static function model()
+    {
+        return new static();
+    }
 }

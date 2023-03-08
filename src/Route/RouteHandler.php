@@ -2,6 +2,8 @@
 
 namespace App\Route;
 
+use App\Route\interfaces\RouteHandlerInterface;
+
 class RouteHandler
 {
     /**
@@ -22,12 +24,12 @@ class RouteHandler
     }
 
     /**
-     * Pluck the route
+     * Pluck the action by route
      *
-     * @param $routes
+     * @param array $routes
      * @return RouteConfiguration
      */
-    public function pluck($routes): RouteConfiguration
+    public function pluck(array $routes): RouteConfiguration
     {
         foreach ($routes as $route => $controllerAndAction) {
             if ($this->is_match($route)) {
