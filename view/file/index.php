@@ -32,20 +32,20 @@
     <tbody>
     <?php foreach ($file as $fileData): ?>
     <tr>
-        <td><?=$fileData['code']?></td>
-        <td><?=$fileData['name']?></td>
-        <td><?=$fileData['level1']?></td>
-        <td><?=$fileData['level2']?></td>
-        <td><?=$fileData['level3']?></td>
-        <td><?=$fileData['price']?></td>
-        <td><?=$fileData['price_sp']?></td>
-        <td><?=$fileData['count']?></td>
-        <td><?=$fileData['fields_of_properties']?></td>
-        <td><?=$fileData['also_buy']?></td>
-        <td><?=$fileData['units']?></td>
-        <td><?=$fileData['image']?></td>
-        <td><?=$fileData['display_on_main']?></td>
-        <td><?=$fileData['description']?></td>
+        <td><?=$fileData['code'] ? $fileData['code'] : 'NULL'?></td>
+        <td><?=$fileData['name'] ? $fileData['name'] : 'NULL'?></td>
+        <td><?=$fileData['level1'] ? $fileData['level1'] : 'NULL'?></td>
+        <td><?=$fileData['level2'] ? $fileData['level2'] : 'NULL'?></td>
+        <td><?=$fileData['level3'] ? $fileData['level3'] : 'NULL'?></td>
+        <td><?=$fileData['price'] ? $fileData['price'] : 'NULL'?></td>
+        <td><?=$fileData['price_sp'] ? $fileData['price_sp'] : 'NULL'?></td>
+        <td><?=$fileData['count'] ? $fileData['count'] : 'NULL'?></td>
+        <td><?=$fileData['fields_of_properties'] ? $fileData['fields_of_properties'] : 'NULL'?></td>
+        <td><?=$fileData['also_buy'] ? $fileData['also_buy'] : 'NULL'?></td>
+        <td><?=$fileData['units'] ? $fileData['units'] : 'NULL'?></td>
+        <td><?=$fileData['image'] ? $fileData['image'] : 'NULL'?></td>
+        <td><?=$fileData['display_on_main'] ? $fileData['display_on_main'] : 'NULL'?></td>
+        <td><?=$fileData['description'] ? $fileData['description'] : 'NULL'?></td>
     </tr>
     <?php endforeach; ?>
     </tbody>

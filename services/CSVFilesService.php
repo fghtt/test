@@ -39,14 +39,14 @@ class CSVFilesService
         $columns['level2'] = $data[3];
         $columns['level3'] = $data[4];
         $columns['price'] = $data[5];
-        $columns['price_sp'] = $data[6];
+        $columns['price_sp'] = str_replace('"', '', $data[6]);
         $columns['count'] = $data[7];
         $columns['fields_of_properties'] = $data[8];
         $columns['also_buy'] = $data[9];
-        $columns['units'] = $data[10];
+        $columns['units'] = str_replace('"', '', $data[10]);
         $columns['image'] = $data[11];
         $columns['display_on_main'] = $data[12];
-        $columns['description'] = $data[13];
+        $columns['description'] = preg_replace('/",{2,}|,{2,}/', '', $data[13]);
 
         return $columns;
     }
